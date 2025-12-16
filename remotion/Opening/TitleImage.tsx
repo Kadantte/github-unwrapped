@@ -1,8 +1,15 @@
 import React from "react";
-import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import {
+  Img,
+  interpolate,
+  spring,
+  useCurrentFrame,
+  useVideoConfig,
+} from "remotion";
 import { z } from "zod";
 import { openingSceneStartAngle, rocketSchema } from "../../src/config";
 import type { GradientType } from "../Gradients/available-gradients";
+import { PANE_BORDER } from "../TopLanguages/Pane";
 
 export const openingTitleSchema = z.object({
   login: z.string(),
@@ -45,6 +52,20 @@ export const TitleImage: React.FC<z.infer<typeof openingTitleSchema>> = ({
         perspective: 1000,
         position: "relative",
       }}
-    ></div>
+    >
+      <Img
+        crossOrigin="anonymous"
+        src={"https://avatars.githubusercontent.com/u/1629785?v=4"}
+        style={{
+          width: 160,
+          borderRadius: TITLE_IMAGE_INNER_BORDER_RADIUS,
+          height: 160,
+          border: PANE_BORDER,
+          transform: `rotateY(${flipRad}rad)`,
+          backfaceVisibility: "hidden",
+          position: "absolute",
+        }}
+      />
+    </div>
   );
 };
