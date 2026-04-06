@@ -136,8 +136,6 @@ export const Productivity: React.FC<Props> = ({ graphData, weekday, hour }) => {
           "Tuesday",
           "Wednesday",
           "Thursday",
-          "Wednesday",
-          "Thursday",
           "Friday",
           "Saturday",
           "Sunday",
